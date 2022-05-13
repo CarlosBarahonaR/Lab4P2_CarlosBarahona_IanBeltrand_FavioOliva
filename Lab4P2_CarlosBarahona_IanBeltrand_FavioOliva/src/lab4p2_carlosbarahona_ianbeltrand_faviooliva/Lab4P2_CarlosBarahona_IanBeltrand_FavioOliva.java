@@ -83,9 +83,76 @@ public class Lab4P2_CarlosBarahona_IanBeltrand_FavioOliva {
                 }
                 break;
 
-                default:
+                case 6: {
+                    int opcion2;
+                    do {
+                        System.out.println("Ingrese tipo de Spider man"
+                                + "\n1.spider punk"
+                                + "\n2.spider superior"
+                                + "\n3.spider clasico"
+                                + "\ningrese opcion: ");
+                        opcion2 = leer.nextInt();
+
+                        switch (opcion2) {
+                            case 1: {
+                                System.out.println("Spider punk\n");
+                                System.out.println("Ingrese nombre: ");
+                                String nombre = leer.next();
+                                System.out.println("Ingrese puntos de ataque: ");
+                                int ptsAtack = leer.nextInt();
+                                System.out.println("Ingrese puntos de vida: ");
+                                int ptsVida = leer.nextInt();
+                                System.out.println("Ingrese nombre de universo: ");
+                                String nombreUni = leer.next();
+
+                                spidermans.add(new SpiderPunk(nombre, ptsAtack, ptsVida, nombreUni));
+
+                            }
+                            break;
+
+                            case 2: {
+                                System.out.println("Spider superior\n");
+                                System.out.println("Ingrese nombre: ");
+                                String nombre = leer.next();
+                                System.out.println("Ingrese puntos de ataque: ");
+                                int ptsAtack = leer.nextInt();
+                                System.out.println("Ingrese puntos de vida: ");
+                                int ptsVida = leer.nextInt();
+                                System.out.println("Ingrese nombre de universo: ");
+                                String nombreUni = leer.next();
+
+                                spidermans.add(new SuperiorSpiderman(nombre, ptsAtack, ptsVida, nombreUni));
+                            }
+                            break;
+
+                            case 3: {
+                                System.out.println("Spider clasico\n");
+                                System.out.println("Ingrese nombre: ");
+                                String nombre = leer.next();
+                                System.out.println("Ingrese puntos de ataque: ");
+                                int ptsAtack = leer.nextInt();
+                                System.out.println("Ingrese puntos de vida: ");
+                                int ptsVida = leer.nextInt();
+                                System.out.println("Ingrese nombre de universo: ");
+                                String nombreUni = leer.next();
+
+                                spidermans.add(new Spiderman(nombre, ptsAtack, ptsVida, nombreUni));
+                            }
+                            break;
+
+                            default: {
+                                System.out.println("fuera de rango");
+                            }
+                            break;
+
+                        }
+                    } while (opcion2 < 1 || opcion2 > 3);
+                }
+                break;
+                default: {
                     System.out.println("opcion incorrecta o no es un entero!\n");
-                    break;
+                }
+                break;
 
             }
         } while (opcion != 0);
