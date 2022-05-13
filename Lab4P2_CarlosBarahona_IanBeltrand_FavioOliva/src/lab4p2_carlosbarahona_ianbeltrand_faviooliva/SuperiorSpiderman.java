@@ -31,6 +31,7 @@ public class SuperiorSpiderman extends Spiderman {
         int daño1 = spiderman.getPuntosAtaque() * (int) porcentaje;
         int dañoFinal = spiderman.getPuntosAtaque() + daño1;
         siniestro.setPuntosVida(siniestro.getPuntosVida() - dañoFinal);
+        System.out.println(spiderman.getNombre() + " ataca a " + siniestro.getNombre() + " haciendo " + dañoFinal + " de daño, dejándolo a " + siniestro.getPuntosVida() + " de vida.");
     }
 
 }

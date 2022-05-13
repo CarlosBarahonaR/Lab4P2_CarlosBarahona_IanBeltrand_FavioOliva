@@ -24,6 +24,7 @@ public class Clasico extends Spiderman {
     public void atacar(Spiderman spiderman, Siniestro siniestro) {
 
         siniestro.setPuntosVida(siniestro.getPuntosVida() - spiderman.getPuntosAtaque());
+        System.out.println(spiderman.getNombre() + " ataca a " + siniestro.getNombre() + " haciendo " + spiderman.getPuntosAtaque() + " de daño, dejándolo a " + siniestro.getPuntosVida() + " de vida.");
     }
 
 }

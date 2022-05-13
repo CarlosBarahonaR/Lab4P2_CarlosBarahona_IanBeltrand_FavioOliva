@@ -26,8 +26,10 @@ public class SpiderPunk extends Spiderman {
             int daño1 = spiderman.getPuntosAtaque() * (int) 0.15;
             int dañoFinal = spiderman.getPuntosAtaque() + daño1;
             siniestro.setPuntosVida(siniestro.getPuntosVida() - dañoFinal);
+            System.out.println(spiderman.getNombre() + " ataca a " + siniestro.getNombre() + " haciendo " + dañoFinal + " de daño, dejándolo a " + siniestro.getPuntosVida() + " de vida.");
         } else {
             siniestro.setPuntosVida(siniestro.getPuntosVida() - spiderman.getPuntosAtaque());
+            System.out.println(spiderman.getNombre() + " ataca a " + siniestro.getNombre() + " haciendo " + spiderman.getPuntosAtaque() + " de daño, dejándolo a " + siniestro.getPuntosVida() + " de vida.");
         }
     }
 

@@ -26,8 +26,10 @@ public class Blindado extends Siniestro {
             int daño1 = siniestro.getPuntosAtaque() * (int) 0.10;
             int dañoFinal = siniestro.getPuntosAtaque() + daño1;
             spiderman.setPuntosVida(spiderman.getPuntosVida() - dañoFinal);
+            System.out.println(siniestro.getNombre() + " ataca a " + spiderman.getNombre() + " haciendo " + dañoFinal + " de daño, dejándolo a " + spiderman.getPuntosVida() + " de vida.");
         } else {
             spiderman.setPuntosVida(spiderman.getPuntosVida() - siniestro.getPuntosAtaque());
+            System.out.println(siniestro.getNombre() + " ataca a " + spiderman.getNombre() + " haciendo " + siniestro.getPuntosAtaque() + " de daño, dejándolo a " + spiderman.getPuntosVida() + " de vida.");
         }
     }
 

@@ -26,6 +26,7 @@ public class Alienigena extends Siniestro {
         int daño1 = siniestro.getPuntosAtaque() * (int) 0.30;
         int dañoFinal = siniestro.getPuntosAtaque() + daño1;
         spiderman.setPuntosVida(spiderman.getPuntosVida() - dañoFinal);
+        System.out.println(siniestro.getNombre() + " ataca a " + spiderman.getNombre() + " haciendo " + dañoFinal + " de daño, dejándolo a " + spiderman.getPuntosVida() + " de vida.");
 
     }
 
