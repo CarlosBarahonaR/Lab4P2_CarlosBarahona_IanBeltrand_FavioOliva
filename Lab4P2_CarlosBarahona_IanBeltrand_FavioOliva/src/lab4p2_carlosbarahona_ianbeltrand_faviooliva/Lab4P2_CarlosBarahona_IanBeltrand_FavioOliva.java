@@ -6,6 +6,7 @@
 package lab4p2_carlosbarahona_ianbeltrand_faviooliva;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 /**
@@ -17,11 +18,82 @@ public class Lab4P2_CarlosBarahona_IanBeltrand_FavioOliva {
     static ArrayList<Spiderman> spidermans = new ArrayList();
     static ArrayList<Siniestro> siniestros = new ArrayList();
 
+    static ArrayList<String> NombreSpidermans = new ArrayList();
+    static ArrayList<String> NombreSiniestros = new ArrayList();
+    static ArrayList<String> NombreUniversos = new ArrayList();
+
+    public static void Crear() {
+        int ContadorN = 0;
+
+        NombreSpidermans.add("Miles");
+        NombreSpidermans.add("Favio");
+        NombreSpidermans.add("Peter");
+        NombreSpidermans.add("Ian");
+        NombreSpidermans.add("Carlos");
+        NombreSpidermans.add("Porky");
+        NombreSpidermans.add("Andres");
+
+        NombreSiniestros.add("Doc. Oct");
+        NombreSiniestros.add("Morbius");
+        NombreSiniestros.add("Buitre");
+        NombreSiniestros.add("Samuel L. Jackson");
+        NombreSiniestros.add("Duende Verde");
+        NombreSiniestros.add("Andres");
+
+        NombreUniversos.add("616");
+        NombreUniversos.add("Oscuro");
+        NombreUniversos.add("401");
+        NombreUniversos.add("MC");
+        NombreUniversos.add("Invertido");
+        NombreUniversos.add("001");
+
+        for (int j = 0; j < 2; j++) {
+            SpiderPunk spiderpunk = new SpiderPunk(NombreSpidermans.get(ContadorN), 450, 1000, NombreUniversos.get(ContadorN));
+            ContadorN = ContadorN + 1;
+            spidermans.add(spiderpunk);
+        }
+
+        for (int j = 0; j < 2; j++) {
+            Clasico spiderpunk = new Clasico(NombreSpidermans.get(ContadorN), 450, 1000, NombreUniversos.get(ContadorN));
+            ContadorN = ContadorN + 1;
+            spidermans.add(spiderpunk);
+        }
+
+        for (int j = 0; j < 2; j++) {
+            SuperiorSpiderman spiderpunk = new SuperiorSpiderman(NombreSpidermans.get(ContadorN), 450, 1000, NombreUniversos.get(ContadorN));
+            ContadorN = ContadorN + 1;
+            spidermans.add(spiderpunk);
+        }
+
+        ContadorN = 0;
+
+        for (int i = 0; i < 2; i++) {
+            Blindado siniestro = new Blindado(NombreSiniestros.get(ContadorN), 450, 1000, NombreUniversos.get(0));
+            ContadorN = ContadorN + 1;
+            siniestros.add(siniestro);
+        }
+
+        for (int i = 0; i < 2; i++) {
+            AlteradoGeneticamente siniestro = new AlteradoGeneticamente(NombreSiniestros.get(ContadorN), 450, 1000, NombreUniversos.get(0));
+            ContadorN = ContadorN + 1;
+            siniestros.add(siniestro);
+        }
+
+        for (int i = 0; i < 2; i++) {
+            Alienigena siniestro = new Alienigena(NombreSiniestros.get(ContadorN), 450, 1000, NombreUniversos.get(0));
+            ContadorN = ContadorN + 1;
+            siniestros.add(siniestro);
+        }
+
+        Collections.shuffle(siniestros);
+        Collections.shuffle(spidermans);
+    }
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-
+        Crear();
         Scanner leer = new Scanner(System.in);
         int opcion;
         do {
@@ -149,6 +221,76 @@ public class Lab4P2_CarlosBarahona_IanBeltrand_FavioOliva {
                     } while (opcion2 < 1 || opcion2 > 3);
                 }
                 break;
+
+                case 7: {
+                    System.out.println("Crear Enemigo\n");
+                    int opcion2;
+                    do {
+                        System.out.println("Ingrese tipo de Spider man"
+                                + "\n1.blindado"
+                                + "\n2.alienigena"
+                                + "\n3.alterado geneticamente"
+                                + "\ningrese opcion: ");
+                        opcion2 = leer.nextInt();
+
+                        switch (opcion2) {
+                            case 1: {
+                                System.out.println("Blindado\n");
+                                System.out.println("Ingrese nombre: ");
+                                String nombre = leer.next();
+                                System.out.println("Ingrese puntos de ataque: ");
+                                int ptsAtack = leer.nextInt();
+                                System.out.println("Ingrese puntos de vida: ");
+                                int ptsVida = leer.nextInt();
+                                System.out.println("Ingrese nombre de universo: ");
+                                String nombreUni = leer.next();
+
+                                siniestros.add(new Blindado(nombre, ptsAtack, ptsVida, nombreUni));
+
+                            }
+                            break;
+
+                            case 2: {
+                                System.out.println("Alienigena\n");
+                                System.out.println("Ingrese nombre: ");
+                                String nombre = leer.next();
+                                System.out.println("Ingrese puntos de ataque: ");
+                                int ptsAtack = leer.nextInt();
+                                System.out.println("Ingrese puntos de vida: ");
+                                int ptsVida = leer.nextInt();
+                                System.out.println("Ingrese nombre de universo: ");
+                                String nombreUni = leer.next();
+
+                                siniestros.add(new Alienigena(nombre, ptsAtack, ptsVida, nombreUni));
+                            }
+                            break;
+
+                            case 3: {
+                                System.out.println("Alterado Geneticamente\n");
+                                System.out.println("Ingrese nombre: ");
+                                String nombre = leer.next();
+                                System.out.println("Ingrese puntos de ataque: ");
+                                int ptsAtack = leer.nextInt();
+                                System.out.println("Ingrese puntos de vida: ");
+                                int ptsVida = leer.nextInt();
+                                System.out.println("Ingrese nombre de universo: ");
+                                String nombreUni = leer.next();
+
+                                siniestros.add(new AlteradoGeneticamente(nombre, ptsAtack, ptsVida, nombreUni));
+                            }
+                            break;
+
+                            default: {
+                                System.out.println("fuera de rango");
+                            }
+                            break;
+
+                        }
+                    } while (opcion2 < 1 || opcion2 > 3);
+
+                }
+                break;
+
                 default: {
                     System.out.println("opcion incorrecta o no es un entero!\n");
                 }
