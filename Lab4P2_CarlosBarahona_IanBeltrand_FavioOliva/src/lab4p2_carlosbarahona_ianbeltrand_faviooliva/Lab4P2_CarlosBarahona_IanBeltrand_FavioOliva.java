@@ -136,7 +136,7 @@ public class Lab4P2_CarlosBarahona_IanBeltrand_FavioOliva {
                                 System.out.println("Ingrese nombre de universo: ");
                                 String nombreUni = leer.next();
 
-                                spidermans.add(new Spiderman(nombre, ptsAtack, ptsVida, nombreUni));
+                                spidermans.add(new Clasico(nombre, ptsAtack, ptsVida, nombreUni));
                             }
                             break;
 
