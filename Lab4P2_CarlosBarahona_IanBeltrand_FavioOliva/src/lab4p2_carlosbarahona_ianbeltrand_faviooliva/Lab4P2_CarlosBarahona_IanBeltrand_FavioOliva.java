@@ -324,6 +324,7 @@ public class Lab4P2_CarlosBarahona_IanBeltrand_FavioOliva {
                     Jugar jugar = new Jugar();
                     
                     jugar.Jugar(spidermans, siniestros);
+                    Crear();
                 }
                 break;
 
