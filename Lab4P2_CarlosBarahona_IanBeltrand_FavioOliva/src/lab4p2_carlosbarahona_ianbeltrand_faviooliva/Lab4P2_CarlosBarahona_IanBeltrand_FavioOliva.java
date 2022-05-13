@@ -5,6 +5,7 @@
  */
 package lab4p2_carlosbarahona_ianbeltrand_faviooliva;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -13,10 +14,14 @@ import java.util.Scanner;
  */
 public class Lab4P2_CarlosBarahona_IanBeltrand_FavioOliva {
 
+    static ArrayList<Spiderman> spidermans = new ArrayList();
+    static ArrayList<Siniestro> siniestros = new ArrayList();
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+
         Scanner leer = new Scanner(System.in);
         int opcion;
         do {
@@ -39,12 +44,24 @@ public class Lab4P2_CarlosBarahona_IanBeltrand_FavioOliva {
 
                 case 1: {
                     System.out.println("-----Listar Spiderman-----");
+                    for (int u = 0; u < spidermans.size(); u++) {
+                        if (spidermans.get(u) instanceof Spiderman) {
+                            System.out.println(spidermans.get(u).toString());
+
+                        }
+                    }
 
                 }
                 break;
 
                 case 2: {
                     System.out.println("-----Listar Enemigos-----");
+                    for (int u = 0; u < siniestros.size(); u++) {
+                        if (siniestros.get(u) instanceof Siniestro) {
+                            System.out.println(siniestros.get(u).toString());
+
+                        }
+                    }
 
                 }
                 break;
@@ -73,4 +90,5 @@ public class Lab4P2_CarlosBarahona_IanBeltrand_FavioOliva {
             }
         } while (opcion != 0);
     }
+
 }
