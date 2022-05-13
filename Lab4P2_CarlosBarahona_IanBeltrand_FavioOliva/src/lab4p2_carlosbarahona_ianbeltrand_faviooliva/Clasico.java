@@ -20,4 +20,10 @@ public class Clasico extends Spiderman {
         return "Clasico{" + "nombre=" + nombre + ", puntosAtaque=" + puntosAtaque + ", puntosVida=" + puntosVida + ", nombreUniverso=" + nombreUniverso + '}';
     }
 
+    @Override
+    public void atacar(Spiderman spiderman, Siniestro siniestro) {
+
+        siniestro.setPuntosVida(siniestro.getPuntosVida() - spiderman.getPuntosAtaque());
+    }
+
 }

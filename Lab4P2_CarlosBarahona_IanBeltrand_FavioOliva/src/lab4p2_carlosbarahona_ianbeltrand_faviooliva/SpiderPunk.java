@@ -20,4 +20,15 @@ public class SpiderPunk extends Spiderman {
         return "SpiderPunk{" + "nombre=" + nombre + ", puntosAtaque=" + puntosAtaque + ", puntosVida=" + puntosVida + ", nombreUniverso=" + nombreUniverso + '}';
     }
 
+    @Override
+    public void atacar(Spiderman spiderman, Siniestro siniestro) {
+        if (siniestro instanceof Blindado) {
+            int daño1 = spiderman.getPuntosAtaque() * (int) 0.15;
+            int dañoFinal = spiderman.getPuntosAtaque() + daño1;
+            siniestro.setPuntosVida(siniestro.getPuntosVida() - dañoFinal);
+        } else {
+            siniestro.setPuntosVida(siniestro.getPuntosVida() - spiderman.getPuntosAtaque());
+        }
+    }
+
 }

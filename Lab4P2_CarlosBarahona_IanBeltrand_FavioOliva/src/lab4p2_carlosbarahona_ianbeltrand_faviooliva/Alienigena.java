@@ -20,4 +20,13 @@ public class Alienigena extends Siniestro {
         return "Alienigena{" + "nombre=" + nombre + ", puntosAtaque=" + puntosAtaque + ", puntosVida=" + puntosVida + ", nombreUniverso=" + nombreUniverso + '}';
     }
 
+    @Override
+    public void atacar(Siniestro siniestro, Spiderman spiderman) {
+
+        int daño1 = siniestro.getPuntosAtaque() * (int) 0.30;
+        int dañoFinal = siniestro.getPuntosAtaque() + daño1;
+        spiderman.setPuntosVida(spiderman.getPuntosVida() - dañoFinal);
+
+    }
+
 }

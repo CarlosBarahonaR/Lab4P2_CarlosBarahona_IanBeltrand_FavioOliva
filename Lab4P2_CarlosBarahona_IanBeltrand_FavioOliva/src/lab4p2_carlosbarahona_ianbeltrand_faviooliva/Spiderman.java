@@ -9,7 +9,7 @@ package lab4p2_carlosbarahona_ianbeltrand_faviooliva;
  *
  * @author Admin
  */
-public class Spiderman {
+public abstract class Spiderman {
 
     public String nombre;
     public int puntosAtaque;
@@ -59,5 +59,7 @@ public class Spiderman {
     public String toString() {
         return "Spiderman{" + "nombre=" + nombre + ", puntosAtaque=" + puntosAtaque + ", puntosVida=" + puntosVida + ", nombreUniverso=" + nombreUniverso + '}';
     }
+    
+    public abstract void atacar(Spiderman spiderman, Siniestro siniestro);
 
 }

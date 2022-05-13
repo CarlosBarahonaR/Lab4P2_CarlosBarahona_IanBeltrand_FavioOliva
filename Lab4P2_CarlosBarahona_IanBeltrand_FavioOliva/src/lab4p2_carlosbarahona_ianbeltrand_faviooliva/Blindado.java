@@ -20,4 +20,15 @@ public class Blindado extends Siniestro {
         return "Blindado{" + "nombre=" + nombre + ", puntosAtaque=" + puntosAtaque + ", puntosVida=" + puntosVida + ", nombreUniverso=" + nombreUniverso + '}';
     }
 
+    @Override
+    public void atacar(Siniestro siniestro, Spiderman spiderman) {
+        if (spiderman instanceof Clasico) {
+            int daño1 = siniestro.getPuntosAtaque() * (int) 0.10;
+            int dañoFinal = siniestro.getPuntosAtaque() + daño1;
+            spiderman.setPuntosVida(spiderman.getPuntosVida() - dañoFinal);
+        } else {
+            spiderman.setPuntosVida(spiderman.getPuntosVida() - siniestro.getPuntosAtaque());
+        }
+    }
+
 }
