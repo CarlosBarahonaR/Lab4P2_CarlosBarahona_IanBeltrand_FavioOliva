@@ -23,6 +23,9 @@ public class Lab4P2_CarlosBarahona_IanBeltrand_FavioOliva {
     static ArrayList<String> NombreUniversos = new ArrayList();
 
     public static void Crear() {
+
+        spidermans.clear();
+        siniestros.clear();
         int ContadorN = 0;
 
         NombreSpidermans.add("Miles");
@@ -87,6 +90,7 @@ public class Lab4P2_CarlosBarahona_IanBeltrand_FavioOliva {
 
         Collections.shuffle(siniestros);
         Collections.shuffle(spidermans);
+
     }
 
     /**
@@ -316,6 +320,10 @@ public class Lab4P2_CarlosBarahona_IanBeltrand_FavioOliva {
 
                 case 5: {
                     System.out.println("-----Jugar-----");
+                    
+                    Jugar jugar = new Jugar();
+                    
+                    jugar.Jugar(spidermans, siniestros);
                 }
                 break;
 
