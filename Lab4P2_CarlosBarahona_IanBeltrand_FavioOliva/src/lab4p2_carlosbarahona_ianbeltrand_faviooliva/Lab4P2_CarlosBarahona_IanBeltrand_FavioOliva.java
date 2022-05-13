@@ -104,6 +104,8 @@ public class Lab4P2_CarlosBarahona_IanBeltrand_FavioOliva {
                     + "\n3. Modificar Spiderman"
                     + "\n4. Modificar Enemigos"
                     + "\n5. Jugar"
+                    + "\n6. crear spiderman"
+                    + "\n7. crear siniestro"
                     + "\nseleccione una opcion: ");
             opcion = leer.nextInt();
 
@@ -140,13 +142,175 @@ public class Lab4P2_CarlosBarahona_IanBeltrand_FavioOliva {
 
                 case 3: {
                     System.out.println("-----Modificar Spiderman-----");
+                    int x;
+                    do {
+                        System.out.println("\nOpciones disponibles:"
+                                + "\n1.editar un atributo"
+                                + "\n2.editar todo"
+                                + "\nseleccione una opcion: ");
+                        x = leer.nextInt();
 
+                        switch (x) {
+                            case 1: {
+                                System.out.println("editar un atributo\n");
+
+                                System.out.println("Ingrese la posicion de la casa a modificar: ");
+                                int pos = leer.nextInt();
+
+                                int e;
+                                do {
+                                    System.out.println("\nOpciones disponibles:"
+                                            + "\n1.modificar nombre"
+                                            + "\n2.modificar pts de ataque"
+                                            + "\n3.modificar pst de vida"
+                                            + "\n4.modificar universo"
+                                            + "\nseleccione una opcion: ");
+                                    e = leer.nextInt();
+
+                                    switch (e) {
+                                        case 1:
+                                            System.out.println("modificar nombre");
+
+                                            System.out.println("Ingrese la nombre del spiderman: ");
+                                            spidermans.get(pos).setNombre(leer.next());
+                                            break;
+                                        case 2:
+                                            System.out.println("modificar pts de ataque");
+
+                                            System.out.println("Ingrese puntos de ataque: ");
+                                            spidermans.get(pos).setPuntosAtaque(leer.nextInt());
+                                            break;
+                                        case 3:
+                                            System.out.println("modificar pst de vida");
+
+                                            System.out.println("Ingrese puntos de vida: ");
+                                            spidermans.get(pos).setPuntosVida(leer.nextInt());
+                                            break;
+                                        case 4:
+                                            System.out.println("modificar universo");
+
+                                            System.out.println("Ingrese nombre de universo: ");
+                                            spidermans.get(pos).setNombreUniverso(leer.next());
+                                            break;
+                                        default:
+                                            System.out.println("opcion incorrecta o no es un entero!\n");
+                                            break;
+
+                                    }
+                                } while (e < 1 || e > 4);
+
+                            }
+                            break;
+                            case 2: {
+                                System.out.println("Ingrese la posicion de la casa a modificar: ");
+                                int pos = leer.nextInt();
+                                System.out.println("Ingrese la nombre de la casa: ");
+                                spidermans.get(pos).setNombre(leer.next());
+
+                                System.out.println("Ingrese puntos de ataque: ");
+                                spidermans.get(pos).setPuntosAtaque(leer.nextInt());
+
+                                System.out.println("Ingrese puntos de vida: ");
+                                spidermans.get(pos).setPuntosVida(leer.nextInt());
+
+                                System.out.println("Ingrese nombre de universo: ");
+                                spidermans.get(pos).setNombreUniverso(leer.next());
+
+                            }
+                            break;
+                            default:
+                                System.out.println("opcion incorrecta o no es un entero!\n");
+                                break;
+
+                        }
+                    } while (x < 1 || x > 2);
                 }
                 break;
 
                 case 4: {
                     System.out.println("-----Modificar Enemigos-----");
+                    int x;
+                    do {
+                        System.out.println("\nOpciones disponibles:"
+                                + "\n1.editar un atributo"
+                                + "\n2.editar todo"
+                                + "\nseleccione una opcion: ");
+                        x = leer.nextInt();
 
+                        switch (x) {
+                            case 1: {
+                                System.out.println("editar un atributo\n");
+
+                                System.out.println("Ingrese la posicion de la casa a modificar: ");
+                                int pos = leer.nextInt();
+
+                                int e;
+                                do {
+                                    System.out.println("\nOpciones disponibles:"
+                                            + "\n1.modificar nombre"
+                                            + "\n2.modificar pts de ataque"
+                                            + "\n3.modificar pst de vida"
+                                            + "\n4.modificar universo"
+                                            + "\nseleccione una opcion: ");
+                                    e = leer.nextInt();
+
+                                    switch (e) {
+                                        case 1:
+                                            System.out.println("modificar nombre");
+
+                                            System.out.println("Ingrese la nombre del siniestro: ");
+                                            siniestros.get(pos).setNombre(leer.next());
+                                            break;
+                                        case 2:
+                                            System.out.println("modificar pts de ataque");
+
+                                            System.out.println("Ingrese puntos de ataque: ");
+                                            siniestros.get(pos).setPuntosAtaque(leer.nextInt());
+                                            break;
+                                        case 3:
+                                            System.out.println("modificar pst de vida");
+
+                                            System.out.println("Ingrese puntos de vida: ");
+                                            siniestros.get(pos).setPuntosVida(leer.nextInt());
+                                            break;
+                                        case 4:
+                                            System.out.println("modificar universo");
+
+                                            System.out.println("Ingrese nombre de universo: ");
+                                            siniestros.get(pos).setNombreUniverso(leer.next());
+                                            break;
+                                        default:
+                                            System.out.println("opcion incorrecta o no es un entero!\n");
+                                            break;
+
+                                    }
+                                } while (e < 1 || e > 4);
+
+                            }
+                            break;
+                            case 2: {
+                                System.out.println("Ingrese la posicion de la casa a modificar: ");
+                                int pos = leer.nextInt();
+                                System.out.println("Ingrese la nombre del siniestro: ");
+                                siniestros.get(pos).setNombre(leer.next());
+
+                                System.out.println("Ingrese puntos de ataque: ");
+                                siniestros.get(pos).setPuntosAtaque(leer.nextInt());
+
+                                System.out.println("Ingrese puntos de vida: ");
+                                siniestros.get(pos).setPuntosVida(leer.nextInt());
+
+                                System.out.println("Ingrese nombre de universo: ");
+                                siniestros.get(pos).setNombreUniverso(leer.next());
+
+                            }
+                            break;
+                            default:
+                                System.out.println("opcion incorrecta o no es un entero!\n");
+                                break;
+
+                        }
+                    } while (x < 1 || x > 2);
                 }
                 break;
 
